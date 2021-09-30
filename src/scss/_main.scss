@@ -1,0 +1,25 @@
+.main-uni {
+  // margin-top: 11.5rem;
+  @media (max-width: 991px) {
+    margin-top: 5.6rem;
+  }
+}
+
+@import "_noticias-principales";
+
+@import "_covid-section";
+
+@import "_redes";
+
+@import "_noticias-actualidad";
+
+@import "_noticias-secciones";
+
+@import "_card-destacada";
+
+@import "_cards-noticias";
+
+
+/* Otras Secciones */
+
+@import "_singlePost";

@@ -1,0 +1,111 @@
+.footer__background__pink {
+  background-color: $pink;
+}
+
+.footer__background__teal {
+  background-color: $teal;
+}
+
+.footer__background__yellow {
+  background-color: $yellow;
+}
+
+.footer__background__cyan {
+  background-color: $green;
+}
+
+.footer__background__blue {
+  background-color: $blue;
+}
+
+.footer__background__orange {
+  background-color: $orange;
+}
+
+.footer__container {
+  display: flex;
+  padding: 3rem 1rem;
+}
+
+.footer__logo {
+  width: 228px;
+  height: 127px;
+}
+
+.footer__logo__titulo {
+  padding: 2rem 0 2rem 0;
+}
+
+.footer__logo__titulo p {
+  font-weight: 700;
+  text-align: start;
+}
+
+.footer__redessociales a {
+  padding: 0 0.5rem;
+}
+
+.footer__links {
+  margin: 1.5rem 0 0 1.5rem;
+}
+
+.footer__ul__1 li {
+  padding: 0.25rem;
+}
+
+.footer__ul__1 li a {
+  font-size: 1.25rem;
+  color: #282827;
+  font-weight: 700;
+}
+
+.footer__ul__1 li a:hover,
+.footer__ul__1 li a:hover {
+  color: #faf9f9;
+}
+
+.footer__ul__2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__ul__2 li {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--font--color);
+}
+
+.footer__ul__2 li a {
+  font-size: 1.25rem;
+  padding-right: 0.25rem;
+  color: #282827;
+}
+
+.footer__ul__2 li a:hover,
+.footer__ul__2 li a:focus {
+  color: #faf9f9;
+}
+
+.footer__copyright {
+  padding-bottom: 3.2rem;
+}
+
+.footer__copyright p {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .footer__links {
+    display: none;
+  }
+
+  .footer__container {
+    justify-content: center;
+  }
+
+  .footer__col__1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

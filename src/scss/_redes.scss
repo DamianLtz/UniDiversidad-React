@@ -1,0 +1,52 @@
+.titulo__redes {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 2rem;
+  @media (max-width: 768px) {
+    .titulo__redes {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.redes {
+  margin: 3rem 0;
+}
+
+.redes a {
+  font-family: "Barlow", sans-serif;
+  border: 1px solid #cecece;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.redes a p {
+  font-size: 1.5rem;
+}
+
+.redes a:hover {
+  filter: drop-shadow(1px 1px 1px rgba(73, 73, 73, 0.45));
+}
+
+.redes a > img {
+  padding: 0 0.5rem;
+}
+
+/* Colores del texto de las redes */
+
+.redes a:first-child p {
+  color: #cb39a7;
+}
+
+.redes a:nth-child(2) p {
+  color: #55acee;
+}
+
+.redes a:nth-child(3) p {
+  color: #395185;
+}
+
+.redes a:nth-child(4) p {
+  color: #ff0000;
+}

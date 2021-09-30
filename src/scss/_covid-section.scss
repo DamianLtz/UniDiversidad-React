@@ -1,0 +1,56 @@
+.background-covid {
+  background-color: $covid-background;
+}
+.covid__box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.covid__box > .col-lg-4 {
+  width: 38%;
+}
+
+.covid__button {
+  background-color: #ffffff;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #009f95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+  transition: width 1s, height 1s, transform 0.35s;
+}
+
+.covid__button img {
+  padding-right: 1rem;
+}
+
+.covid__button:hover {
+  transform: scale(1.03);
+  color: #009f95;
+}
+
+@media (max-width: 991px) {
+  .covid__icon {
+    display: none;
+  }
+
+  .covid__box > .col-lg-4 {
+    width: 100%;
+  }
+
+  .covid__button {
+    padding: 1rem;
+  }
+
+  .covid__button > p {
+    font-size: 1rem;
+  }
+}

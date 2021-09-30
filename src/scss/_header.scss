@@ -1,0 +1,340 @@
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.li-reset,
+.ul-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.reset {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #161616;
+}
+
+a:hover {
+  color: #202020;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+.font-w400 {
+  font-weight: 400;
+}
+
+.font-w500 {
+  font-weight: 500;
+}
+
+.font-w600 {
+  font-weight: 600;
+}
+
+.font-w700 {
+  font-weight: 700;
+}
+
+.fsize-20 {
+  font-size: 1.25rem;
+}
+
+.img__adaptable {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ------------------ Cambios al Navbar y menú Hamburguesa de Bootstrap ------------------ */
+
+.navbar-toggler-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-light .navbar-toggler,
+.navbar-toggler:focus {
+  border-color: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* ------------------ Enlaces, logo's y formulario del Navbar ------------------ */
+
+.logo{
+    width: 120px;
+    height: 82px;
+}
+
+.navbar-uni{
+  @media (max-width: 991px) {
+    position: fixed;
+    top: 0;
+    z-index: 1024;
+  }
+}
+
+.bg-navbar-uni {
+  background-color: #ffffff;
+}
+
+.nav__bg {
+  background-color: #f4f3f3;
+  padding: 0.75rem 0;
+}
+
+.ul__desktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ul__desktop .nav-item > .nav-link {
+  padding: 0 0.75rem;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+
+.links__nav .nav-item > .nav-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.buscador__container {
+  display: flex;
+}
+
+.fecha__calendario__nav {
+  display: flex;
+  margin-left: 1.875rem;
+}
+
+.fecha__calendario__nav img {
+  width: 21px;
+}
+
+.fecha__calendario__nav p {
+  padding: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.border__buscador {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.searchbox__home {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  border: none;
+  font-size: 1rem;
+}
+
+.form-control::placeholder {
+  vertical-align: text-bottom;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Cambiar el color a los links del navbar según la pagina de la Web */
+
+.links__nav__color__1 .nav-item > .nav-link,
+.color__page__1 {
+  color: #ec3e8d;
+}
+
+.border__color__1 {
+  border: 1.5px solid #ec3e8d;
+}
+
+.nav-item > .nav-link:hover {
+  background-size: 100% 2px;
+}
+
+.links__nav__color__2 .nav-item > .nav-link,
+.color__page__2 {
+  color: #f3b007;
+}
+
+.border__color__2 {
+  border: 1.5px solid #f3b007;
+}
+
+.links__nav__color__3 .nav-item > .nav-link,
+.color__page__3 {
+  color: #47cce2;
+}
+
+.border__color__3 {
+  border: 1.5px solid #47cce2;
+}
+
+.links__nav__color__4 .nav-item > .nav-link,
+.color__page__4 {
+  color: #0b4d8c;
+}
+
+.border__color__4 {
+  border: 1.5px solid #0b4d8c;
+}
+
+.links__nav__color__5 .nav-item > .nav-link,
+.color__page__5 {
+  color: #ea5830;
+}
+
+.border__color__5 {
+  border: 1.5px solid #ea5830;
+}
+
+.border__color__6 {
+  border: 3px solid #cecece;
+}
+
+/* ------------------ Boton Navbar ------------------ */
+
+.button {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0.6rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+}
+
+.button:hover {
+  color: #ffffff;
+}
+
+.categorias__button li a {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #374a59;
+}
+
+@media (max-width: 991px) {
+
+  /* ------------------ Navbar -> Fecha y Buscador ------------------ */
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    box-shadow: rgba(3, 3, 3, 0.2) 0px 3px 8px;
+  }
+
+  .navbar__vh-100 {
+    height: 100vh;
+  }
+
+  .buscador__container {
+    flex-direction: column;
+  }
+
+  .searchbox__home > div:first-child {
+    order: 2;
+  }
+
+  .searchbox__home > div:nth-child(2) {
+    order: 1;
+    width: 70%;
+  }
+
+  .logo {
+    width: 65px;
+    height: 35px;
+  }
+
+  .button {
+    margin-left: 0;
+  }
+
+  .fecha__calendario__nav {
+    margin-left: 1.25rem;
+  }
+
+  .border__buscador {
+    margin: 1rem 0;
+  }
+
+  .links__nav > .nav-item {
+    padding: 0.75rem 0;
+  }
+
+  .links__nav .nav-item > .nav-link {
+    font-size: 1.25rem;
+    padding: 0;
+  }
+}

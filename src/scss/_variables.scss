@@ -1,0 +1,76 @@
+/* Colores */
+
+$pink: #ec3e8d;
+$teal: #3eacec;
+$yellow: #f3b007;
+$blue: #0b4d8c;
+$orange: #ea5830;
+$green: #1bb12f;
+$red: #d11313;
+$covid-background: #009f95;
+$crimson: #bc043c;
+$grey: #282827;
+$beige: #d2af94;
+
+/* Texto de la página */
+
+$text-color-dark: #202020;
+$text-color-light: #f8f9fa;
+$font--proyect: "Barlow", sans-serif;
+$font--color: #282827;
+$font--weight: 700;
+
+/* [data-theme="dark"] {
+    
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: $font--proyect;
+  margin: 0;
+}
+
+a{
+  color: $text-color-dark;
+}
+
+// Mixins
+
+@mixin text-truncate-one-line {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin text-truncate-wrap {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin text-truncate-wrap-alt {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin text-truncate-cards {
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin img-fix{
+  height: 100%;
+  object-fit: cover;
+}

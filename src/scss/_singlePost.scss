@@ -1,0 +1,100 @@
+.container-singlePost {
+  h1 {
+    color: $pink;
+    padding: 2rem 0;
+    @media (max-width: 991px) {
+      padding: 0 0 2rem 0;
+    }
+  }
+  h2 {
+    line-height: 54.4px;
+    font-weight: 600;
+  }
+  .container-imgPost {
+    width: 100%;
+    object-fit: cover;
+  }
+  .noticia-relacionada {
+    .img-noticia {
+      img {
+        border-radius: 8px 0 0 8px;
+        object-fit: cover;
+      }
+    }
+    .texto-noticia {
+      border: 1px solid #cecece;
+      border-radius: 0 8px 8px 0;
+      h3 {
+        color: $teal;
+      }
+    }
+  }
+  .etiquetas {
+    margin-bottom: 1rem;
+    a {
+      display: inline-block;
+      color: $text-color-dark;
+      border: 1.5px solid #71717a;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.5rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  .contacto__icons {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .contacto__icons__desktop img {
+    padding: 1rem 0;
+  }
+
+  .contacto__icons img {
+    padding: 0 0.5rem;
+  }
+
+  .contacto__icons a:nth-child(3) {
+    padding-right: 0.5rem;
+  }
+
+  .contacto__icons a:nth-child(4) {
+    border-left: 1px #282827 solid;
+    padding-left: 0.5rem;
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  p {
+    color: $text-color-light;
+  }
+}
+
+.titulo-cards-noticias {
+  h2 {
+    color: $pink;
+  }
+}
+
+/* Variantes del color del Tag */
+.tag-pink {
+  background-color: $pink;
+}
+
+.tag-teal {
+  background-color: $teal;
+}
+
+.tag-yellow {
+  background-color: $yellow;
+}
