@@ -21,11 +21,14 @@
     }
     .informe {
       background-color: $text-color-light;
+      opacity: .75;
+      backdrop-filter: blur(8px);
       padding: 1rem;
       border-radius: 8px;
       position: absolute;
       top: 24px;
       left: 32px;
+      margin-right: 32px;
       @media (max-width: 576px) {
         top: 24px;
         left: 0px;

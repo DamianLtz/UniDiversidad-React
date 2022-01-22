@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import listaNoticias from "./API/ListaNoticias";
-import NoticiasSecundariasAlt from "./CardNoticiaSecundariaAlt";
+import CardNoticiaDosCols from "./cardNoticiaDosCols";
 
-const MainFilaTresNoticias = ({ className, categoria }) => {
+const MainNoticiasDosCols = ({ className, categoria }) => {
   const [noticias, setNoticias] = useState([]);
   useEffect(() => {
     setNoticias(listaNoticias);
   }, []);
 
-  const noticiasCards = noticias.filter((noticias) => noticias.categoria === categoria && noticias.id !== 3);
+  const noticiasCards = noticias.filter((noticias) => noticias.categoria === categoria);
 
   return noticias.length ? (
     <section className="container">
@@ -16,13 +16,14 @@ const MainFilaTresNoticias = ({ className, categoria }) => {
         <h2 className="reset text-light">{categoria}</h2>
         {noticiasCards.map((card) => {
           return (
-            <NoticiasSecundariasAlt
+            <CardNoticiaDosCols
               key={card.id}
               id={card.id}
               image={card.image}
               autor={card.autor}
               titulo={card.titulo}
               fecha={card.fecha}
+              widthCard={card.widthCard}
             />
           );
         })}
@@ -39,4 +40,4 @@ const MainFilaTresNoticias = ({ className, categoria }) => {
   );
 };
 
-export default MainFilaTresNoticias;
+export default MainNoticiasDosCols;

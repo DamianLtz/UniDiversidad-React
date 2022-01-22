@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-// import ImgNoticiaRelacionada from "../img/singlepost/main/noticia__relacionada.png";
-// import Clock from "../img/iconos/clock_dark.svg";
+import listaNoticias from "../components/API/ListaNoticias";
 import IconoTwitter from "../img/singlepost/main/twitter.svg";
 import IconoWpp from "../img/singlepost/main/whatsapp.svg";
 import IconoFb from "../img/singlepost/main/facebook.svg";
@@ -12,21 +11,13 @@ import MainBanners from "../components/mainBanners";
 
 const SinglePost = () => {
   const { id } = useParams();
+  const idNoticia = parseInt(id);
   const [posts, setPosts] = useState([]);
-  const obtenerDatosJSON = async () => {
-    const data = await fetch(
-      `https://api.jsonbin.io/b/6154fb5e9548541c29bafdb0/7`
-    );
-    const listaPosts = await data.json();
-    // const posts = listaPosts.listaNoticias;
-    const posts = listaPosts.listaNoticias;
-    setPosts(posts);
-  };
   useEffect(() => {
-    obtenerDatosJSON();
+    setPosts(listaNoticias);
   }, []);
 
-  const post = posts[id];
+  const post = posts.find((posts) => idNoticia === posts.id);
   const cardsNoticias = posts.filter(
     (posts) => posts.section === "card" && posts.type === "Secundaria"
   );
@@ -38,6 +29,9 @@ const SinglePost = () => {
       <div className="container-imgPost">
         <img src={post.image} alt="" className="img-fluid w-100 my-4 my-lg-5" />
       </div>
+      <p className="mb-3 fs-5 fst-italic text-center text-lg-start">
+        {post.comentario}
+      </p>
       <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div className="tag tag-pink me-3">
           <p>{post.categoria}</p>
@@ -48,32 +42,28 @@ const SinglePost = () => {
         <p className="fw-bold fs-5 me-3">{post.fuente}</p>
         <p>Publicado el: {post.fecha}</p>
       </div>
-      <p className="my-3 fs-5 fst-italic text-center text-lg-start">
-        {post.comentario}
-      </p>
-      <p className="pt-3 pb-5 fs-5">{post.info}</p>
-      {/* <div className="row noticia-relacionada d-none d-lg-flex">
-        <div className="col-lg-6 col-md-6 col-sm-12 img-noticia pe-0">
-          <img
-            src={ImgNoticiaRelacionada}
-            alt=""
-            className="img-fluid w-100 h-100"
-          />
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 texto-noticia">
-          <h3 className="py-3">NOTA RELACIONADA</h3>
-          <h4 className="pb-3">Medicos exigen aumento salarial</h4>
-          <div className="tag tag-teal">
-            <p>Sociedad</p>
-          </div>
-          <p className="py-2">{post.infoDos}</p>
-          <div className="d-flex align-items-center py-2">
-            <img src={Clock} alt="Fecha" className="pe-3" />
-            <p>12 de Abril de 2020</p>
-          </div>
-        </div>
-      </div> */}
-      <div className="etiquetas">
+      {post.IconoMailinfo1 ? (
+        <p className={`pt-3 ${post.info2 ? "pb-2" : "pb-5"} fs-5`}>
+          {post.info1}
+        </p>
+      ) : null}
+      {post.info2 ? (
+        <p className={`pt-3 ${post.info3 ? "pb-2" : "pb-5"} fs-5`}>
+          {post.info2}
+        </p>
+      ) : null}
+      {post.info3 ? (
+        <p className={`pt-3 ${post.info4 ? "pb-2" : "pb-5"} fs-5`}>
+          {post.info3}
+        </p>
+      ) : null}
+      {post.info4 ? (
+        <p className={`pt-3 ${post.info5 ? "pb-2" : "pb-5"} fs-5`}>
+          {post.info4}
+        </p>
+      ) : null}
+      {post.info5 ? <p className="pt-3 pb-5 fs-5">{post.info5}</p> : null}
+      <div className={`etiquetas ${!post.info1 ? "pt-3" : ""}`}>
         <a href="#/">Politica</a>
         <a href="#/">Nacional</a>
         <a href="#/">Actualidad</a>

@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 import Clock from "../img/iconos/clock_dark.svg";
 
-const CardSecundariaSeccionesAlt = ({ titulo, fecha, image, autor, id }) => {
+const CardNoticiaDosCols = ({ titulo, fecha, image, autor, id, widthCard }) => {
   return (
     <Link
       to={`/singlePost/${id}`}
-      className="col-lg-4 col-md-12 col-sm-12 noticia__col__1 g-0"
+      className={`col-lg-6 col-md-12 col-sm-12 ${widthCard} g-0`}
     >
       <div>
         <img src={image} alt="" className="img-fluid w-100" />
@@ -24,4 +24,4 @@ const CardSecundariaSeccionesAlt = ({ titulo, fecha, image, autor, id }) => {
   );
 };
 
-export default CardSecundariaSeccionesAlt;
+export default CardNoticiaDosCols;

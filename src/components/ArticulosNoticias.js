@@ -1,11 +1,11 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Clock from "../img/iconos/clock_dark.svg";
 
-const CardNoticias = ({image, titulo, info, fecha}) => {
+const CardNoticias = ({id, image, titulo, info, fecha}) => {
   return (
     <div className="col-lg-4 col-md-6 col-sm-12 gy-4">
-      <div className="card">
+      <Link to={`singlePost/${id}`} className="card">
         <img src={image} className="card-img-top" alt="" />
         <div className="card-body">
           <h4 className="card-title">{titulo}</h4>
@@ -15,7 +15,7 @@ const CardNoticias = ({image, titulo, info, fecha}) => {
             <p>{fecha}</p>
           </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

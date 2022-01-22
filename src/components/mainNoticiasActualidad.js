@@ -1,105 +1,69 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import listaNoticias from "./API/ListaNoticias";
 // Iconos
 
 import Clock from "../img/iconos/clock_dark.svg";
 
 const MainNoticiasActualidad = () => {
   const [noticias, setNoticias] = useState([]);
-  const obtenerDatosJSON = async () => {
-    const data = await fetch(
-      "https://api.jsonbin.io/b/61500a059548541c29b88851/11"
-    );
-    const listaNoticias = await data.json();
-    const noticias = listaNoticias.noticiasSecciones;
-    setNoticias(noticias);
-  };
   useEffect(() => {
-    obtenerDatosJSON();
+    setNoticias(listaNoticias);
   }, []);
 
-  return noticias.length !== 0 ? (
+  const noticiaDestacada = noticias.find((noticias) => noticias.categoria === "Actualidad" && noticias.id === 4);
+  const noticiasActualidad = noticias.filter((noticias) => noticias.categoria === "Actualidad" && noticias.id > 4);
+  const noticiasMojo = noticias.filter((noticias) => noticias.categoria === "Mojo");
+
+  return noticias.length ? (
     <>
       <section className="container">
         <div className="row container-props container-actualidad-bg mx-1 mx-lg-0 mb-4">
           <h1 className="text-light px-0 px-lg-4 pb-4">Actualidad</h1>
           <Link
-            to={`/singlePost/${noticias[0].id}`}
-            className="col-lg-7 px-0 px-lg-4"
-          >
+            to={`/singlePost/${noticiaDestacada.id}`}
+            className="col-lg-7 px-0 px-lg-4">
             <img
-              src={noticias[0].image}
+              src={noticiaDestacada.image}
               alt=""
               className="img-fluid img-princ-border w-100"
             />
             <div className="container-texto-noticia-princ bg-light">
-              <h2>{noticias[0].titulo}</h2>
-              <p className="my-3">{noticias[0].info}</p>
-              <div className="d-flex align-items-center">
+              <h2>{noticiaDestacada.titulo}</h2>
+              <div className="d-flex align-items-center mt-3">
                 <img src={Clock} alt="" className="pe-2" />
-                <p>{noticias[0].fecha}</p>
+                <p>{noticiaDestacada.fecha}</p>
               </div>
             </div>
           </Link>
           <div className="col-lg-5 gy-4 gy-lg-0 d-flex flex-column justify-content-between">
-            <Link to={`/singlePost/${noticias[1].id}`} className="row">
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 pe-0">
-                <img
-                  src={noticias[1].image}
-                  alt=""
-                  className="img-fluid img-sec-border w-100"
-                />
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 ps-lg-0">
-                <div className="container-texto-noticia-sec bg-light">
-                  <h3>{noticias[1].titulo}</h3>
-                  <div className="d-flex align-items-center mt-3">
-                    <img src={Clock} alt="" className="pe-2" />
-                    <p>{noticias[1].fecha}</p>
+            {noticiasActualidad.map((noticia) => {
+              return (
+                <Link
+                  key={noticia.id}
+                  to={`/singlePost/${noticia.id}`}
+                  className="row py-2 my-lg-0"
+                >
+                  <div className="col-lg-6 col-md-6 col-sm-12 px-0 pe-0">
+                    <img
+                      src={noticia.image}
+                      alt=""
+                      className="img-fluid img-sec-border w-100"
+                    />
                   </div>
-                </div>
-              </div>
-            </Link>
-            <Link
-              to={`/singlePost/${noticias[2].id}`}
-              className="row my-4 my-lg-0"
-            >
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 pe-0">
-                <img
-                  src={noticias[2].image}
-                  alt=""
-                  className="img-fluid img-sec-border w-100"
-                />
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 ps-lg-0">
-                <div className="container-texto-noticia-sec bg-light">
-                  <h3>{noticias[2].titulo}</h3>
-                  <div className="d-flex align-items-center mt-3">
-                    <img src={Clock} alt="" className="pe-2" />
-                    <p>{noticias[2].fecha}</p>
+                  <div className="col-lg-6 col-md-6 col-sm-12 px-0 ps-lg-0">
+                    <div className="container-texto-noticia-sec bg-light">
+                      <h3>{noticia.titulo}</h3>
+                      <div className="d-flex align-items-center mt-3">
+                        <img src={Clock} alt="" className="pe-2" />
+                        <p>{noticia.fecha}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </Link>
-            <Link to={`/singlePost/${noticias[3].id}`} className="row">
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 pe-0">
-                <img
-                  src={noticias[3].image}
-                  alt=""
-                  className="img-fluid img-sec-border w-100"
-                />
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-12 px-0 ps-lg-0">
-                <div className="container-texto-noticia-sec bg-light">
-                  <h3>{noticias[3].titulo}</h3>
-                  <div className="d-flex align-items-center mt-3">
-                    <img src={Clock} alt="" className="pe-2" />
-                    <p>{noticias[3].fecha}</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
+                </Link>
+              );
+            })}
+
           </div>
           <div className="container-lg button__link__box">
             <div className="row">
@@ -174,45 +138,28 @@ const MainNoticiasActualidad = () => {
           <div className="col-lg-6">
             <div className="container-props container-mojo__bg h-100">
               <h1 className="text-light pb-4">Mojo</h1>
-              <Link
-                to={`/singlePost/${noticias[4].id}`}
-                className="row px-3 mb-4"
-              >
-                <div className="col-lg-6 col-md-6 col-sm-12 px-0">
-                  <img
-                    src={noticias[4].image}
-                    className="img-fluid w-100 img-sec-border"
-                    alt=""
-                  />
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 px-0">
-                  <div className="container-texto-noticia-sec bg-light">
-                    <h3>{noticias[4].titulo}</h3>
-                    <div className="d-flex align-items-center mt-3">
-                      <img src={Clock} alt="" className="pe-2" />
-                      <p>{noticias[4].fecha}</p>
+              {noticiasMojo.map(noticia => {
+                return (
+                  <Link key={noticia.id} to={`/singlePost/${noticia.id}`} className="row px-3 py-2">
+                    <div className="col-lg-6 col-md-6 col-sm-12 px-0">
+                      <img
+                        src={noticia.image}
+                        className="img-fluid w-100 img-sec-border"
+                        alt=""
+                      />
                     </div>
-                  </div>
-                </div>
-              </Link>
-              <Link to={`/singlePost/${noticias[5].id}`} className="row px-3">
-                <div className="col-lg-6 col-md-6 col-sm-12 px-0">
-                  <img
-                    src={noticias[5].image}
-                    className="img-fluid w-100 img-sec-border"
-                    alt=""
-                  />
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 px-0">
-                  <div className="container-texto-noticia-sec bg-light">
-                    <h3>{noticias[5].titulo}</h3>
-                    <div className="d-flex align-items-center mt-3">
-                      <img src={Clock} alt="" className="pe-2" />
-                      <p>{noticias[5].fecha}</p>
+                    <div className="col-lg-6 col-md-6 col-sm-12 px-0">
+                      <div className="container-texto-noticia-sec bg-light">
+                        <h3>{noticia.titulo}</h3>
+                        <div className="d-flex align-items-center mt-3">
+                          <img src={Clock} alt="" className="pe-2" />
+                          <p>{noticia.fecha}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </Link>
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </div>

@@ -24,11 +24,11 @@ const mainCovid = () => {
             </a>
           </div>
           <div className="col-lg-3 col-md-12 col-sm-12 gx-lg-3 g-0">
-            <a href="#/" className="covid__button">
+            <a href="https://www.argentina.gob.ar/coronavirus/vacuna/aplicadas" className="covid__button" target="_blank" rel="noreferrer">
               <div>
                 <img src={Mapa} alt="" />
               </div>
-              Mapa del coronavirus
+              Monitor de Vacunacion
             </a>
           </div>
           <div className="col-lg-2 ms-2 covid__icon">
